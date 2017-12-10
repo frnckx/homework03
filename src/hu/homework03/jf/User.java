@@ -37,11 +37,14 @@ public class User {
     public String setLastname (String lastname){
         return this.lastname = lastname;
     }
+
     public String getPassword (){
         return password;
     }
     public String setPassword (String password){
-        return this.password = password;
+        PasswordGenerator passwordGenerator = new PasswordGenerator(){};
+        passwordGenerator.generatePassword(8);
+        return password;
     }
     public int getAge (){
         return age;
